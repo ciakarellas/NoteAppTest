@@ -32,10 +32,12 @@ class Notes extends StatelessWidget {
   Widget build(BuildContext context) {
     // var noteState = Provider.of<NoteState>(context);
     final _controller = new TextEditingController();
-    final String test = 'test';
+
+    var note = Provider.of<NoteState>(context);
+    
     _controller.value = _controller.value.copyWith(
-      text: test,
-      selection: TextSelection(baseOffset: test.length, extentOffset: test.length),
+      text: note.note,
+      selection: TextSelection(baseOffset: note.note.length, extentOffset: note.note.length),
       composing: TextRange.empty,
     );
     
